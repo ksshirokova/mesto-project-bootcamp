@@ -1,0 +1,14 @@
+.popup__name-line {
+    background-color: #000;
+    height: 1px;
+    width: 358px;
+    margin: 0 0 30px;
+    opacity: 0.2;
+
+}
+
+@media (max-width:530px) {
+    .popup__name-line {
+        width: 238px;
+    }
+}

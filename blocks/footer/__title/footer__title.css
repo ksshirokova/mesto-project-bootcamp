@@ -1,0 +1,10 @@
+.footer__title {
+    color: #545454;
+    margin: 0;
+}
+
+@media (max-width:890px) {
+    .footer__title {
+        margin-left: 19px;
+    }
+}
