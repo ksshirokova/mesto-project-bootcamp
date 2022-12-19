@@ -18,97 +18,68 @@
         <section class="profile">
             <img class="profile__avatar" src="./images/image-2.jpg" alt="портрет Жака Кусто">
             <div class="profile__info">
-                <h1 class="profile__title-info">Жак-Ив Кусто</h1> 
+                <h1 class="profile__title-info">Жак-Ив Кусто</h1>
                 <p class="profile__subtitle-info">Исследователь океана</p>
             </div>
-            <a href="#" class="profile__edit-button"></a>
-            <a href="#" class="profile__button"><div class="profile__button-plus"></div></a>
+            <button type="button" class="profile__edit-button button"><img src="./images/edit-button.png"></button>
+            <button type="button" class="profile__button">
+                <div class="profile__button-plus"></div>
+            </button>
         </section>
         <section class="elements">
-            <article class="element">
+            <template class="element" id="element">
                 <div class="element__background">
-                    <img class="element__background-picture" src="./images/kirill-pershin-1088404-unsplash-2.jpg" alt="Карачаевск">
+                    <img class="element__background-picture" src="default">
                     <div class="element__background-subtitle">
-                        <h2 class="element__title">Карачаевск</h2>
-                        <a href="#" class="element__heart"></a>
+                        <h2 class="element__title"></h2>
+                        <button type="button" class="element__heart-button"></button>
+                        </button>
                     </div>
 
                 </div>
-            </article>
-            <article class="element">
-                <div class="element__background"><img class="element__background-picture"
-                        src="./images/kirill-pershin-1404681-unsplash-2.jpg" alt="Гора Эльбрус">
-                    <div class="element__background-subtitle">
-                        <h2 class="element__title">Гора Эльбрус</h2>
-                        <a href="#" class="element__heart"></a>
-                    </div>
-                </div>
-
-            </article>
-            <article class="element">
-                <div class="element__background"><img class="element__background-picture"
-                        src="./images/kirill-pershin-1556355-unsplash-2.jpg" alt="Домбай">
-                    <div class="element__background-subtitle">
-                        <h2 class="element__title">Домбай</h2>
-                        <a href="#" class="element__heart"></a>
-                    </div>
-                </div>
-
-            </article>
-            <article class="element">
-                <div class="element__background"><img class="element__background-picture"
-                        src="./images/kirill-pershin-1088404-unsplash-2.jpg" alt="Гора Эльбрус">
-                    <div class="element__background-subtitle">
-                        <h2 class="element__title">Гора Эльбрус</h2>
-                        <a href="#" class="element__heart"></a>
-                    </div>
-                </div>
-
-            </article>
-            <article class="element">
-                <div class="element__background"><img class="element__background-picture"
-                        src="./images/kirill-pershin-1404681-unsplash-2.jpg" alt="Домбай">
-                    <div class="element__background-subtitle">
-                        <h2 class="element__title">Домбай</h2>
-                        <a href="#" class="element__heart"></a>
-                    </div>
-                </div>
-
-            </article>
-            <article class="element">
-                <div class="element__background"><img class="element__background-picture"
-                        src="./images/kirill-pershin-1556355-unsplash-2.jpg" alt="Карачаево-Черкессия">
-                    <div class="element__background-subtitle">
-                        <h2 class="element__title">Карачаево-Черкессия</h2>
-                        <a href= "#" class="element__heart"></a>
-                    </div>
-                </div>
-
-            </article>
+            </template>
+            
+            
+            
         </section>
     </main>
     <footer class="footer">
         <p class="footer__title">© 2020 Mesto Russia</p>
     </footer>
-    <div class="popup">
-        <div class="popup__overlay">
-            <div class="popup__container">
-                <a href="#" class="popup__close-icon"></a>
-                <h3 class="popup__title">Редактировать профиль</h3>
-                <p class="popup__name">Жак-Ив Кусто</p>
-                <div class="popup__name-line"></div>
-                <p class="popup__name">Исследователь океана</p>
-                <div class="popup__name-line"></div>
-                <a href="#" class="popup__button"><div ><p class="popup__button-text">Сохранить</p></div></a>
-                
-            </div>
-            
-        </div>
-        
+    <div class="popup popup_name_add-name">
+        <div class="popup__container">
+            <button type="button" class="popup__close-button ">
+            </button>
+            <h3 class="popup__title">Редактировать профиль</h3>
 
+            <input type="text" class="popup__name" value="Жак-Ив Кусто"></input>
+            <input type="text" class="popup__job" value="Исследователь океана"></input>
+            <button type='submit' class="popup__save-button">
+                <p class="popup__button-text">Сохранить</p>
+            </button>
+
+        </div>
     </div>
-    
-    
+    <div class="popup popup_name_add-card">
+        <div class="popup__container">
+            <button type="button" class="popup__close-button popup__close-button_second">
+            </button>
+            <h3 class="popup__title">Новое место</h3>
+            <form class="popup__form">
+                <input type="text" class="popup__name popup__name_link" placeholder="Название" value=""></input>
+                <input type="url" class="popup__job popup__job_link" placeholder="Ссылка на картинку" value=""></input>
+            </form>
+            <button type="submit" class="popup__save-button popup__save-button_card">
+                <p class="popup__button-text">Сохранить</p>
+            </button>
+
+        </div>
+</div>
+
+
+
+
+        <script src="./pages/index.js"></script>
 </body>
 
 </html>

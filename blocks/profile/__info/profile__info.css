@@ -1,7 +1,3 @@
 .profile__info {
     margin: 25.75px 0 0 30px;
 }
-
-@media (max-width:338px) {
-    .profile__info {}
-}

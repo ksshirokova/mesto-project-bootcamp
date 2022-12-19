@@ -8,7 +8,7 @@
 @media (max-width:495px) {
     .profile__title-info {
         font-size: 27px;
-
+        margin: 0 0 14px;
 
     }
 }

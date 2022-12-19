@@ -1,6 +1,7 @@
 .profile__button-plus {
     background-image: url(../../../images/plus.svg);
-    width: 16px;
-    height: 16px;
+    width: 22px;
+    height: 22px;
     margin: 0 auto;
+    background-size: cover;
 }

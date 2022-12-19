@@ -1,0 +1,10 @@
+.element__heart-button_on{
+    background: url(../../../../images/Heart-on.svg);
+    margin-left: auto;
+    width: 22px;
+    height: 19px;
+    border: none;
+    outline: none;
+    padding: 0;
+    
+}

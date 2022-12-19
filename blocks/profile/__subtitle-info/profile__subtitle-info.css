@@ -1,23 +1,16 @@
 .profile__subtitle-info {
-    margin: 16px 0 0;
+    margin: 0;
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
 
 }
 
-@media (max-width:495px) {
-    .profile__subtitle-info {
-        font-size: 14px;
-
-
-    }
-}
 
 @media (max-width:338px) {
     .profile__subtitle-info {
         margin-left: 20px;
-
+        font-size: 14px;
 
     }
 }
