@@ -26,22 +26,16 @@
                 <div class="profile__button-plus"></div>
             </button>
         </section>
-        <section class="elements">
-            <template class="element" id="element">
+        
+            <template id="element" class="elements">
                 <div class="element__background">
                     <img class="element__background-picture" src="default">
                     <div class="element__background-subtitle">
                         <h2 class="element__title"></h2>
                         <button type="button" class="element__heart-button"></button>
-                        </button>
                     </div>
-
                 </div>
-            </template>
-            
-            
-            
-        </section>
+            </template>   
     </main>
     <footer class="footer">
         <p class="footer__title">© 2020 Mesto Russia</p>
@@ -51,9 +45,10 @@
             <button type="button" class="popup__close-button ">
             </button>
             <h3 class="popup__title">Редактировать профиль</h3>
-
+            <form class="popup__form">
             <input type="text" class="popup__name" value="Жак-Ив Кусто"></input>
             <input type="text" class="popup__job" value="Исследователь океана"></input>
+        </form>
             <button type='submit' class="popup__save-button">
                 <p class="popup__button-text">Сохранить</p>
             </button>

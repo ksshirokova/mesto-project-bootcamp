@@ -1,5 +1,4 @@
 
-const heartButtonElement = document.querySelector('.element__heart-button'); 
 
 
     
@@ -50,9 +49,18 @@ saveButton.addEventListener('click', () => {
     closePopup(popupElement);
 })
 
+// function handleFormSubmit(evt) {
+//     evt.preventDefault();
+//     nameInput.getAttribute('value');
+//     jobInput.getAttribute('value');
+//     nameOfUser.textContent =  nameInput.getAttribute('value');
+//     jobOfUser.textContent = jobInput.getAttribute('value');
+// }
 
+// formElement.addEventListener('submit', handleFormSubmit);
 
 const cardTemplate = document.querySelector('#element').content;
+
 
 function addNewCard(titleValue, linkValue){
   
@@ -60,12 +68,13 @@ function addNewCard(titleValue, linkValue){
 
   cardElement.querySelector('.element__background-picture').src = linkValue;
   cardElement.querySelector('.element__title').textContent = titleValue;
+  const heartButtonElement = cardElement.querySelector('.element__heart-button'); 
 
-//   heartButtonElement.addEventListener('click', function(evt){ 
-//     const eventTarget = evt.target; 
-//     eventTarget.classList.toggle('element__heart-button_on');
-//     eventTarget.classList.toggle('element__heart-button')
-//  }) 
+  heartButtonElement.addEventListener('click', function(evt){ 
+    const eventTarget = evt.target; 
+    eventTarget.classList.toggle('element__heart-button_on');
+    eventTarget.classList.toggle('element__heart-button')
+ }) 
 
   cardsContainer.prepend(cardElement);
   
@@ -83,3 +92,39 @@ addCardButton.addEventListener('click', function(){
 
  
 });
+
+const initialCards = [
+    {
+      name: 'Архыз',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+    },
+    {
+      name: 'Челябинская область',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+    },
+    {
+      name: 'Иваново',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+    },
+    {
+      name: 'Камчатка',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+    },
+    {
+      name: 'Холмогорский район',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+    },
+    {
+      name: 'Байкал',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+    }
+  ];
+  const renderCard = (data) => {
+    cardsContainer.append(addNewCard(data));
+  };
+  initialCards.forEach((data) =>{
+      renderCard(data)
+      document.querySelector('.element__title').textContent = data.name;
+      document.querySelector('.element__background-picture').src = data.link;
+
+  });
