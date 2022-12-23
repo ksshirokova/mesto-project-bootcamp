@@ -27,8 +27,11 @@
             </button>
         </section>
         
-            <template id="element" class="elements">
+            
+    </main>
+    <template id="element" class="elements">
                 <div class="element__background">
+                    <button type="button" class="element__delite-button"></button>
                     <img class="element__background-picture" src="default">
                     <div class="element__background-subtitle">
                         <h2 class="element__title"></h2>
@@ -36,7 +39,6 @@
                     </div>
                 </div>
             </template>   
-    </main>
     <footer class="footer">
         <p class="footer__title">© 2020 Mesto Russia</p>
     </footer>
@@ -70,11 +72,22 @@
 
         </div>
 </div>
+<div class="popup popup__card-image">
+    <div class="popup__card-container">
+        <button type="button" class="popup__close-button popup__close-button_third">
+        </button>
+        
+        <img class="popup__background-picture" src=" ">
+        <p class="popup__subtitle"></p>
+
+    </div>
+</div>
 
 
 
 
         <script src="./pages/index.js"></script>
+    
 </body>
 
 </html>

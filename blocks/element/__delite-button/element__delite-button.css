@@ -1,0 +1,13 @@
+.element__delite-button{
+    background: url(../../../images/delite-card.svg);
+    height: 18px;
+    width: 19px;
+    border: none;
+    outline: none;
+    padding: 0;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

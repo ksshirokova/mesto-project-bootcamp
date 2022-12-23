@@ -8,4 +8,9 @@
     height: 100%;
     align-items: center;
     justify-content: center;
+
+    visibility: visible;
+  opacity: 1;
+  transition-delay: 0s, 0s;
+    
 }
