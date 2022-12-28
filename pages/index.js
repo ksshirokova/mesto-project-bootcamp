@@ -35,6 +35,7 @@ const addCardPopupButton = document.querySelector('.profile__button');
 const secondClosePopupElement = document.querySelector('.popup__close-button_second');
 const formElement = document.querySelector('.popup__form');
 const formAddCard = document.querySelector('.popup__form_type_add-card');
+const formAddName = document.querySelector('.popup__form_type_add-name');
 const nameInput = document.querySelector('.popup__name');
 const titleImage = document.querySelector('.popup__job_image-link');
 const nameImage = document.querySelector('.popup__name_image-text');
@@ -87,13 +88,7 @@ closeImagePopupButton.addEventListener('click', function () {
 
 
 
-saveButton.addEventListener('click', () => {
-  nameOfUser.textContent = nameInput.value;
-  jobOfUser.textContent = jobInput.value;
-  nameInput.value = '';
-  jobInput.value = '';
-  closePopup(popupElement);
-})
+
 
 
 
@@ -139,12 +134,29 @@ function handleImagePreview(card) {
 }
 
 
+formAddName.addEventListener('submit', function (event) {
+  
+  event.preventDefault()
+  
+  nameOfUser.textContent = nameInput.value;
+  jobOfUser.textContent = jobInput.value;
+  
+  closePopup(popupElement);
+})
 
 formAddCard.addEventListener('submit', function (event) {
+  
   event.preventDefault()
 
   addNewCard({
     link: titleImage.value,
     name: nameImage.value
+    
   })
+
+  titleImage.value = '';
+  nameImage.value = '';
+ 
+  closePopup(addPopup);
 })
+
