@@ -35,15 +35,15 @@ module.exports = {
                 test: /\.(png|svg|jpg|gif|woff(2)?|eot|ttf|otf)$/,
                 type: 'asset/resource'
             },
-            {
-                // применять это правило только к CSS-файлам
-                test: /\.css$/,
-                // при обработке этих файлов нужно использовать
-                // MiniCssExtractPlugin.loader и css-loader
-                use: [MiniCssExtractPlugin.loader, {
-                    loader: 'css-loader'
-                }]
-            },
+            // {
+            //     // применять это правило только к CSS-файлам
+            //     test: /\.css$/,
+            //     // при обработке этих файлов нужно использовать
+            //     // MiniCssExtractPlugin.loader и css-loader
+            //     use: [MiniCssExtractPlugin.loader, {
+            //         loader: 'css-loader'
+            //     }]
+            // },
             {
                 
                 test: /\.css$/,
