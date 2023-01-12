@@ -41,8 +41,9 @@
             </button>
             <h3 class="popup__title">Редактировать профиль</h3>
             <form class="popup__form popup__form_type_add-name">
-                <input type="text" class="popup__name" value="Жак-Ив Кусто"></input>
-                <input type="text" class="popup__job" value="Исследователь океана"></input>
+                <input type="text" id="input-name" class="popup__name popup__input" value="Жак-Ив Кусто" placeholder="Имя" minlength="2" maxlength="40" required></input>
+                <span class="popup__input-error input-name-error">Необходимо запонить данное поле</span>
+                <input type="text" class="popup__job popup__input" value="Исследователь океана" placeholder="О себе"  minlength="2" maxlength="200" required></input>
                 <button type='submit' class="popup__save-button">
                     <p class="popup__button-text">Сохранить</p>
                 </button>
@@ -55,15 +56,15 @@
             </button>
             <h3 class="popup__title">Новое место</h3>
             <form class="popup__form popup__form_type_add-card">
-                <input type="text" class="popup__name popup__name_image-text" placeholder="Название"></input>
-                <input type="url" class="popup__job popup__job_image-link" placeholder="Ссылка на картинку"></input>
+                <input type="text" class="popup__name popup__name_image-text" placeholder="Название" minlength="2" maxlength="30" required></input>
+                <input type="url" class="popup__job popup__job_image-link" placeholder="Ссылка на картинку" required></input>
                 <button type="submit" class="popup__save-button popup__save-button_card">
                     <p class="popup__button-text">Сохранить</p>
                 </button>
             </form>
         </div>
     </div>
-    <div class="popup popup__card-image">
+    <div class="popup popup_card-image">
         <div class="popup__card-container">
             <button type="button" class="popup__close-button popup__close-button_third">
             </button>
@@ -74,7 +75,7 @@
         </div>
     </div>
 
-    <template id="element" class="elements">
+    <template id="element">
         <li class="element__background">
             <button type="button" class="element__delete-button"></button>
             <img class="element__background-picture" src="default" alt="">
