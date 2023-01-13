@@ -11,6 +11,14 @@
 @media (max-width: 890px) {
     .elements__list {
         grid-template-columns: repeat(2, minmax(282px, 1fr)) ;
+        max-width: 581px;
+    }
+
+}
+@media (max-width: 638px) {
+    .elements__list {
+        margin: 36px auto 48px;
+       
     }
 
 }
@@ -18,13 +26,10 @@
 @media (max-width: 600px) {
     .elements__list {
         grid-template-columns: minmax(282px, 1fr);
+        max-width: 282px;
+
+        
     }
 
 }
 
-@media (max-width: 638px) {
-    .elements__list {
-        margin: 36px 0 48px;
-    }
-
-}

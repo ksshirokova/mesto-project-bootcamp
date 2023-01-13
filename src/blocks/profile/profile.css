@@ -6,7 +6,7 @@
     flex-wrap: wrap;
 }
 
-@media (max-width:338px) {
+@media (max-width:380px) {
     .profile {
         justify-content: center;
     }
