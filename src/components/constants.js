@@ -42,6 +42,7 @@ export const popupInput = document.querySelector('.popup__input')
 export const titleImage = document.querySelector('.popup__job_image-link');
 export const nameImage = document.querySelector('.popup__name_image-text');
 export const jobInput = document.querySelector('.popup__job');
+export const popupContainer = document.querySelector('.popup__container')
 export const nameOfUser = document.querySelector('.profile__title-info');
 export const jobOfUser = document.querySelector('.profile__subtitle-info');
 export const imagePopup = document.querySelector('.popup_card-image');
@@ -54,12 +55,12 @@ export const popupImage = document.querySelector('.popup__background-picture');
 export const popupImageTitle = document.querySelector('.popup__subtitle');
 export const cardTemplate = document.querySelector('#element');
 export const validationConfig = {
-    formSelector: 'popup__form',
-    inputSelector: 'popup__input',
-    buttonTextClass: 'popup__button-text',
-    submitButtonSelector: 'popup__save-button',
-    inactiveButtonClass: 'popup__save-button_inactive',
-    inactiveButtonTextClass: 'popup__button-text_inactive',
-    inputErrorClass: 'popup__input_type_error',
-    errorClass: 'popup__input-error_active',
+    formSelector: '.popup__form',
+    inputSelector: '.popup__input',
+    buttonTextClass: '.popup__button-text',
+    submitButtonSelector: '.popup__save-button',
+    inactiveButtonClass: '.popup__save-button_inactive',
+    inactiveButtonTextClass: '.popup__button-text_inactive',
+    inputErrorClass: '.popup__input_type_error',
+    errorClass: '.popup__input-error_active',
 };
