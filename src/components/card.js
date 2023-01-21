@@ -2,8 +2,8 @@
 import {cardsContainer, cardTemplate} from './constants.js';
 import {handleImagePreview} from './modal.js';
 
-function createCard(item) {
-    const cardElement = cardTemplate.cloneNode(true).content;
+export function createCard(item) {
+    const cardElement = cardTemplate.content.querySelector('.element__background').cloneNode(true);
 
     const image = cardElement.querySelector('.element__background-picture');
     const name = cardElement.querySelector('.element__title');

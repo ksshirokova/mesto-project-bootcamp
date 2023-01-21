@@ -38,7 +38,8 @@
 @import '../blocks/popup/__button-text/popup__button-text.css';
 @import '../blocks/popup/__button-text/_inactive/popup__button-text_inactive.css';
 @import '../blocks/popup/__input/_type_error/popup__input_type_error.css';
-@import '../blocks/popup/__input-error_active/popup__input-error_active.css';
+@import '../blocks/popup/__input-error/popup__input-error.css';
+@import '../blocks/popup/__input-error/_active/popup__input-error_active.css';
 @import '../blocks/popup/__close-button/popup__close-button.css';
 @import '../blocks/profile/__button-plus/profile__button-plus.css';
 @import '../blocks/element/element.css';

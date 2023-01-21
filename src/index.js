@@ -1,23 +1,26 @@
 import './styles/index.css';
 import { addNewCard } from "./components/card.js";
 import { enableValidation, isValid } from './components/validate.js';
-import { imagePopup, initialCards, popupInput, formAddCard, formAddName, formElement, editPopupButton, addCardPopupButton, profilePopup, addPopup, nameOfUser, nameInput, jobOfUser, jobInput, popupElement, titleImage, nameImage, validationConfig } from './components/constants.js';
+import { imagePopup, initialCards, inputElement, formAddCard, formAddName, formElement, buttonEditProfile, buttonAddCard, profilePopup, nameOfUser, nameInput, jobOfUser, jobInput, popupElement, titleImage, nameImage, validationConfig , cardPopup, allPopups} from './components/constants.js';
 import { openPopup } from "./components/utils.js";
 import { closePopup } from './components/modal.js';
+import { getInitialCards } from './components/api.js';
 
-const renderCards = (elements) => {
+export const renderCards = (elements) => {
   const cards = elements.map(addNewCard);
 
   // cardsContainer.prepend(...cards);
 
 };
 
-renderCards(initialCards);
+// renderCards(initialCards);
+
+getInitialCards()
 
 
 enableValidation(validationConfig);
 
-popupInput.addEventListener('input', isValid(formElement, popupInput, validationConfig));
+inputElement.addEventListener('input', isValid(formElement, inputElement, validationConfig));
 
 formAddName.addEventListener('submit', function (event) {
 
@@ -41,23 +44,28 @@ formAddCard.addEventListener('submit', function (event) {
 
   // titleImage.value = '';
   // nameImage.value = '';
-  event.target.reset()
-
-  closePopup(addPopup);
+  
+  
+  closePopup(cardPopup);
+  event.target.reset();
+  
 })
 
-editPopupButton.addEventListener("click", function () {
+buttonEditProfile.addEventListener("click", function () {
   openPopup(profilePopup);
 });
-addCardPopupButton.addEventListener("click", function () {
-  openPopup(addPopup);
+buttonAddCard.addEventListener("click", function () {
+  openPopup(cardPopup);
 });
 
 document.addEventListener('keydown', function (evt) {
   if (evt.key === 'Escape') {
     closePopup(profilePopup);
-    closePopup(addPopup);
+    closePopup(cardPopup);
     closePopup(imagePopup);
+
+
+    
   }
 });
 
@@ -72,10 +80,10 @@ profilePopup.addEventListener('click', (e) => {
   }
 });
 
-addPopup.addEventListener('click', (e) => {
+cardPopup.addEventListener('click', (e) => {
   if (e.target.classList.contains("popup_opened")){
     
-    closePopup(addPopup);
+    closePopup(cardPopup);
     
   }
 });
@@ -87,3 +95,6 @@ imagePopup.addEventListener('click', (e) => {
     
   }
 });
+
+
+
