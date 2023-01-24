@@ -1,0 +1,26 @@
+.profile__edit-avatar{
+    background: rgba(0, 0, 0, 0.8);
+    position: relative;
+    display: block;
+    height: 26px;
+    width: 26px;
+    top: 0px;
+    left:0px;
+    z-index: 0;
+    padding: 47px;
+}
+
+@media (max-width:380px) {
+    .profile__edit-avatar {
+        margin-right: 30px ;
+        
+
+    }
+}
+@media (max-width:338px) {
+    .profile__edit-avatar {
+        margin: 0;
+        
+
+    }
+}

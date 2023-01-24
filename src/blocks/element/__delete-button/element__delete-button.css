@@ -1,5 +1,6 @@
 .element__delete-button{
     background: url(../../../images/delite-card.svg);
+    display: block;
     height: 18px;
     width: 19px;
     border: none;

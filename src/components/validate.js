@@ -77,7 +77,7 @@ const hasInvalidInput = (inputList) => {
 };
 
 
-const enableButton = (buttonElement, buttonElementText, inactiveButtonClass, inactiveButtonTextClass) =>{
+export const enableButton = (buttonElement, buttonElementText, inactiveButtonClass, inactiveButtonTextClass) =>{
     buttonElement.classList.remove(inactiveButtonClass);
     buttonElementText.classList.remove(inactiveButtonTextClass);
     buttonElement.disabled = false;

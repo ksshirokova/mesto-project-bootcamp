@@ -3,7 +3,20 @@
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
+    position: relative;
+    top: -120px;
+    z-index: 1;
 }
+
+.profile__avatar:hover{
+    z-index: -1;
+}
+
+
+
+
+
+
 @media (max-width:380px) {
     .profile__avatar {
         margin-right: 30px ;
