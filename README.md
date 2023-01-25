@@ -11,6 +11,5 @@
 
 
 
-Ссылка на GitHub Pages: https://ksshirokova.github.io/mesto-project-bootcamp/index.html 
-
+Ссылка на проект: https://ksshirokova.github.io/mesto
 
