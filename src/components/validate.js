@@ -32,6 +32,7 @@ const setEventListeners = (formElement, {inputSelector, submitButtonSelector, bu
             
         });
         toggleButtonState(inputList, buttonElement, buttonElementText, inactiveButtonClass, inactiveButtonTextClass);
+        
     });
    
 };

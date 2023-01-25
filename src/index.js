@@ -1,16 +1,24 @@
 import './styles/index.css';
 import { addNewCard, loadCards } from "./components/card.js";
 import { enableValidation, isValid } from './components/validate.js';
-import { imagePopup, profileAvatar, updateAvatarPopup, profileEditAvatarButton, inputElement, formAddCard, formAddName, formElement, buttonEditProfile, buttonAddCard, profilePopup, nameOfUser, nameInput, jobOfUser, jobInput, popupElement, titleImage, nameImage, validationConfig, cardPopup, popupInputAbout, allPopups, popupInputName, updateAvatarInput, formChangeAvatar, submitButton, submitButtonText } from './components/constants.js';
+import { imagePopup, profileAvatar, updateAvatarPopup, profileEditAvatarButton, inputElement, formAddCard, formAddName, formElement, buttonEditProfile, buttonAddCard, profilePopup, nameOfUser, nameInput, jobOfUser, jobInput, popupElement, titleImage, nameImage, validationConfig, cardPopup, popupInputAbout, allPopups, popupInputName, updateAvatarInput, formChangeAvatar, submitButton, submitButtonText, cardsContainer } from './components/constants.js';
 import { openPopup } from "./components/utils.js";
 import { closePopup } from './components/modal.js';
 import { getInitialCards, getUsersInformation, editProfileInformation, changeUsersAvatar, addNewCardOnServer, addCard } from './components/api.js';
 
 
 export const renderCards = (elements) => {
-  const cards = elements.map(addNewCard);
+  elements.map(addNewCard);
+  // const checkLike = ()=>{
+    
+  //   if(elements.owner._id === '63cfb0e1d3fafc636026387a'){
+  //   evt.target.classList.add('element__heart-button_on');
+  //   }
+  
+  // }
+  // checkLike()
 
-  // cardsContainer.prepend(...cards);
+  // cardsContainer.append(...cards);
 
 };
 
@@ -39,6 +47,7 @@ export const changeUserData = (name, about) => {
 
 
 
+
 export const changeAvatar = (avatar) => {
   profileAvatar.src = avatar.value;
 }
@@ -49,28 +58,52 @@ export const changeAvatar = (avatar) => {
 
 formChangeAvatar.addEventListener('submit', function (event) {
 
+  const button = formChangeAvatar.querySelector('.popup__save-button');
+  const text = formChangeAvatar.querySelector('.popup__button-text')
+  event.preventDefault();
+  setButtonState(button, text, true);
+  changeUsersAvatar(updateAvatarInput.value)
+    .then(() => {
+      changeAvatar(updateAvatarInput)
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+    .finally(() => {
+      setButtonState(button, text, false);
+      closePopup(updateAvatarPopup);
+      event.target.reset();
+    })
 
-  event.preventDefault()
-  changeUsersAvatar(updateAvatarInput.value);
-  changeAvatar(updateAvatarInput)
 
 
-  closePopup(updateAvatarPopup);
-  event.target.reset();
+
 })
 
 
 
 formAddName.addEventListener('submit', function (event) {
-
-  event.preventDefault();
-  changeUserData(popupInputName, popupInputAbout)
+  const button = formAddName.querySelector('.popup__save-button');
+  const text = formAddName.querySelector('.popup__button-text')
+  event.preventDefault()
+  setButtonState(button, text, true);
+  // changeUserData(popupInputName, popupInputAbout)
   editProfileInformation(popupInputName.value, popupInputAbout.value)
+    .then(() => {
+      changeUserData(popupInputName, popupInputAbout)
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+    .finally(() => {
+      setButtonState(button, text, false);
+      closePopup(popupElement);
+    })
 
 
 
 
-  closePopup(popupElement);
+
 })
 
 const setButtonState = (button, buttonText, isSending) => {
@@ -79,8 +112,8 @@ const setButtonState = (button, buttonText, isSending) => {
 }
 //добавление карточки в верстку и на сервер по надатию кнопки
 formAddCard.addEventListener('submit', function (event) {
-  const button = formElement.querySelector('.popup__save-button');
-  const text = formElement.querySelector('.popup__button-text')
+  const button = formAddCard.querySelector('.popup__save-button');
+  const text = formAddCard.querySelector('.popup__button-text')
   event.preventDefault()
   setButtonState(button, text, true);
   // addNewCard(titleImage.value, nameImage.value);
@@ -94,7 +127,8 @@ formAddCard.addEventListener('submit', function (event) {
       console.log(err, "карточка не добавилась")
     })
     .finally(() => {
-      setButtonState(submitButton, submitButtonText, false)
+      setButtonState(button, text, false);
+      closePopup(cardPopup);
     })
   // addNewCard({
   //   link: titleImage.value,
@@ -106,7 +140,7 @@ formAddCard.addEventListener('submit', function (event) {
   // nameImage.value = '';
 
 
-  closePopup(cardPopup);
+
   // event.target.reset();
 
 })
@@ -121,6 +155,9 @@ profileEditAvatarButton.addEventListener("click", function () {
 })
 
 buttonEditProfile.addEventListener("click", function () {
+  popupInputAbout.value = jobOfUser.textContent ;
+  popupInputName.value = nameOfUser.textContent ;
+  
   openPopup(profilePopup);
 
 });

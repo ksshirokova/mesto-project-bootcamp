@@ -49,11 +49,12 @@ export const getUsersInformation = () => {
     })
         .then(getResponse)
         .then((result) => {
-           
+            // const usersId = result._id
             fillInUserData(result.name, result.about, result.avatar);
         })
 
 }
+
 
 
 //отредактировать информацию о пользователе и отправить на сервер
@@ -89,11 +90,7 @@ export const changeUsersAvatar = (avatarLink) => {
         })
     })
         .then(getResponse)
-        .then((result) => {
-            console.log(result)
-
-
-        })
+        
 }
 
 

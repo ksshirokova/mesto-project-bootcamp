@@ -60,9 +60,10 @@ export const popupInputName = document.querySelector('#input-name');
 export const popupInputAbout = document.querySelector('#input-job');
 export const profileEditAvatarButton = document.querySelector('.profile__edit-avatar') ;
 export const submitButton = document.querySelector('.popup__save-button');
-export const confirmDeliteButton = document.querySelector('.popup__button-confirm');
+// export const confirmDeliteButton = document.querySelector('.popup__button-confirm');
 export const submitButtonText = document.querySelector('.popup__button-text');
-export const likesCounter = document.querySelector('.element__likes-counter')
+export const likesCounter = document.querySelector('.element__likes-counter');
+
 
 export const validationConfig = {
     formSelector: '.popup__form',
