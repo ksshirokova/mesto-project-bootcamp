@@ -50,7 +50,6 @@ export const imagePopup = document.querySelector('.popup_card-image');
 export const formInput = document.querySelector('.popup__input');
 export const formError = formElement.querySelector(`.${formInput.id}-error`);
 export const formChangeAvatar = document.querySelector('.popup__form_type_update-profile')
-export const buttonText = document.querySelector('.popup__button-text');
 export const closeButtons = document.querySelectorAll('.popup__close-button');
 export const popupImage = document.querySelector('.popup__background-picture');
 export const popupImageTitle = document.querySelector('.popup__subtitle');
@@ -61,17 +60,14 @@ export const popupInputAbout = document.querySelector('#input-job');
 export const profileEditAvatarButton = document.querySelector('.profile__edit-avatar') ;
 export const submitButton = document.querySelector('.popup__save-button');
 // export const confirmDeliteButton = document.querySelector('.popup__button-confirm');
-export const submitButtonText = document.querySelector('.popup__button-text');
 export const likesCounter = document.querySelector('.element__likes-counter');
 
 
 export const validationConfig = {
     formSelector: '.popup__form',
     inputSelector: '.popup__input',
-    buttonTextClass: '.popup__button-text',
     submitButtonSelector: '.popup__save-button',
     inactiveButtonClass: 'popup__save-button_inactive',
-    inactiveButtonTextClass: 'popup__button-text_inactive',
     inputErrorClass: 'popup__input_type_error',
     errorClass: 'popup__input-error_active',
 };

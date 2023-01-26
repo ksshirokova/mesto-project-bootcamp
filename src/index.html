@@ -16,10 +16,10 @@
     <main class="main">
         <section class="profile">
             <div class="profile__change-avatar">
-                <img class="profile__edit-avatar" src="<%=require('./images/edit-photo.svg')%>" atl="эдит">
+                <div class="profile__edit-avatar"></div>
                 <img class="profile__avatar" src="" alt="аватар пользователя">
             </div>
-            
+
             <div class="profile__info">
                 <h1 class="profile__title-info"></h1>
                 <p class="profile__subtitle-info"></p>
@@ -46,14 +46,14 @@
             </button>
             <h3 class="popup__title">Редактировать профиль</h3>
             <form class="popup__form popup__form_type_add-name">
-                <input type="text" id="input-name" class="popup__name popup__input" value=""
-                    placeholder="Имя" minlength="2" maxlength="22" required></input>
+                <input type="text" id="input-name" class="popup__name popup__input" value="" placeholder="Имя"
+                    minlength="2" maxlength="22" required></input>
                 <span id="input-name-error" class="popup__input-error input-name-error"></span>
-                <input type="text" id="input-job" class="popup__job popup__input" value=""
-                    placeholder="О себе" minlength="2" maxlength="50" required></input>
+                <input type="text" id="input-job" class="popup__job popup__input" value="" placeholder="О себе"
+                    minlength="2" maxlength="50" required></input>
                 <span id="input-job-error" class="popup__input-error input-job-error"></span>
                 <button type='submit' class="popup__save-button" disabled>
-                    <p class="popup__button-text">Сохранить</p>
+                Сохранить
                 </button>
             </form>
         </div>
@@ -71,7 +71,7 @@
                     placeholder="Ссылка на картинку" required></input>
                 <span id="input-url-error" class="popup__input-error input-url-error"></span>
                 <button type="submit" class="popup__save-button popup__save-button_card" disabled>
-                    <p class="popup__button-text">Сохранить</p>
+                   Сохранить
                 </button>
             </form>
         </div>
@@ -86,7 +86,7 @@
                     placeholder="Ссылка на аватар" required></input>
                 <span id="input-avatar-url-error" class="popup__input-error input-avatar-url-error"></span>
                 <button type="submit" class="popup__save-button popup__save-button_avatar" disabled>
-                    <p class="popup__button-text">Сохранить</p>
+                   Сохранить
                 </button>
             </form>
         </div>
@@ -106,17 +106,17 @@
             <button type="button" class="popup__close-button">
             </button>
             <h3 class="popup__title">Вы уверены?</h3>
-            
-                <button type="button" class="popup__save-button popup__button-confirm" disabled>
-                    <p class="popup__button-text">Да</p>
-                </button>
-            
+
+            <button type="button" class="popup__save-button popup__button-confirm" disabled>
+               Да
+            </button>
+
         </div>
     </div>
 
     <template id="element">
         <li class="element__background">
-            <button type="button" class="element__delete-button" ></button>
+            <button type="button" class="element__delete-button"></button>
             <img class="element__background-picture" src="default" alt="">
             <div class="element__background-subtitle">
                 <h2 class="element__title"></h2>
@@ -124,7 +124,7 @@
                     <button type="button" class="element__heart-button"></button>
                     <p class="element__likes-counter"></p>
                 </div>
-                
+
             </div>
         </li>
     </template>

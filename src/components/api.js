@@ -48,10 +48,7 @@ export const getUsersInformation = () => {
         headers: config.headers
     })
         .then(getResponse)
-        .then((result) => {
-            // const usersId = result._id
-            fillInUserData(result.name, result.about, result.avatar);
-        })
+        
 
 }
 

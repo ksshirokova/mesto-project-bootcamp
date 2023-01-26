@@ -1,10 +1,11 @@
 import './styles/index.css';
 import { addNewCard, loadCards } from "./components/card.js";
 import { enableValidation, isValid } from './components/validate.js';
-import { imagePopup, profileAvatar, updateAvatarPopup, profileEditAvatarButton, inputElement, formAddCard, formAddName, formElement, buttonEditProfile, buttonAddCard, profilePopup, nameOfUser, nameInput, jobOfUser, jobInput, popupElement, titleImage, nameImage, validationConfig, cardPopup, popupInputAbout, allPopups, popupInputName, updateAvatarInput, formChangeAvatar, submitButton, submitButtonText, cardsContainer } from './components/constants.js';
+import { imagePopup, profileAvatar, updateAvatarPopup, profileEditAvatarButton, inputElement, formAddCard, formAddName, formElement, buttonEditProfile, buttonAddCard, profilePopup, nameOfUser, nameInput, jobOfUser, jobInput, popupElement, titleImage, nameImage, validationConfig, cardPopup, popupInputAbout, allPopups, popupInputName, updateAvatarInput, formChangeAvatar, cardsContainer } from './components/constants.js';
 import { openPopup } from "./components/utils.js";
 import { closePopup } from './components/modal.js';
 import { getInitialCards, getUsersInformation, editProfileInformation, changeUsersAvatar, addNewCardOnServer, addCard } from './components/api.js';
+
 
 
 export const renderCards = (elements) => {
@@ -24,9 +25,20 @@ export const renderCards = (elements) => {
 
 // renderCards(getInitialCards);
 
+let usersId;
+getUsersInformation()
+.then((result)=>{
+  // result._id = usersId
+  usersId = result._id
+  console.log(result)
+  
+  fillInUserData(result.name, result.about, result.avatar);
+})
+.catch((err)=>{
+  console.log(err)
+})
 
-getUsersInformation();
-
+console.log(usersId)
 
 
 enableValidation(validationConfig);
@@ -61,7 +73,7 @@ formChangeAvatar.addEventListener('submit', function (event) {
   const button = formChangeAvatar.querySelector('.popup__save-button');
   const text = formChangeAvatar.querySelector('.popup__button-text')
   event.preventDefault();
-  setButtonState(button, text, true);
+  setButtonState(button, true);
   changeUsersAvatar(updateAvatarInput.value)
     .then(() => {
       changeAvatar(updateAvatarInput)
@@ -70,7 +82,7 @@ formChangeAvatar.addEventListener('submit', function (event) {
       console.log(err)
     })
     .finally(() => {
-      setButtonState(button, text, false);
+      setButtonState(button, false);
       closePopup(updateAvatarPopup);
       event.target.reset();
     })
@@ -86,7 +98,7 @@ formAddName.addEventListener('submit', function (event) {
   const button = formAddName.querySelector('.popup__save-button');
   const text = formAddName.querySelector('.popup__button-text')
   event.preventDefault()
-  setButtonState(button, text, true);
+  setButtonState(button, true);
   // changeUserData(popupInputName, popupInputAbout)
   editProfileInformation(popupInputName.value, popupInputAbout.value)
     .then(() => {
@@ -96,7 +108,7 @@ formAddName.addEventListener('submit', function (event) {
       console.log(err)
     })
     .finally(() => {
-      setButtonState(button, text, false);
+      setButtonState(button, false);
       closePopup(popupElement);
     })
 
@@ -106,16 +118,17 @@ formAddName.addEventListener('submit', function (event) {
 
 })
 
-const setButtonState = (button, buttonText, isSending) => {
+const setButtonState = (button, isSending) => {
   button.disabled = isSending;
-  buttonText.textContent = isSending ? 'Сохранение...' : 'Сохранить';
+  button.textContent = isSending ? 'Сохранение...' : 'Сохранить';
 }
+
 //добавление карточки в верстку и на сервер по надатию кнопки
 formAddCard.addEventListener('submit', function (event) {
   const button = formAddCard.querySelector('.popup__save-button');
   const text = formAddCard.querySelector('.popup__button-text')
   event.preventDefault()
-  setButtonState(button, text, true);
+  setButtonState(button, true);
   // addNewCard(titleImage.value, nameImage.value);
   addCard(nameImage.value, titleImage.value)
     .then((card) => {
@@ -127,7 +140,7 @@ formAddCard.addEventListener('submit', function (event) {
       console.log(err, "карточка не добавилась")
     })
     .finally(() => {
-      setButtonState(button, text, false);
+      setButtonState(button, false);
       closePopup(cardPopup);
     })
   // addNewCard({
@@ -150,9 +163,9 @@ profileAvatar.addEventListener("click", function (event) {
   openPopup(updateAvatarPopup);
 
 })
-profileEditAvatarButton.addEventListener("click", function () {
-  openPopup(updateAvatarPopup);
-})
+// profileEditAvatarButton.addEventListener("click", function () {
+//   openPopup(updateAvatarPopup);
+// })
 
 buttonEditProfile.addEventListener("click", function () {
   popupInputAbout.value = jobOfUser.textContent ;

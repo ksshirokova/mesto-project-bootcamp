@@ -13,25 +13,24 @@ export const enableValidation = ({formSelector, ...rest}) => {
     
 };
 
-const setEventListeners = (formElement, {inputSelector, submitButtonSelector, buttonTextClass, inactiveButtonClass, inactiveButtonTextClass, ...rest}) => {
+const setEventListeners = (formElement, {inputSelector, submitButtonSelector, inactiveButtonClass, ...rest}) => {
 
     const inputList = Array.from(formElement.querySelectorAll(inputSelector));
     const buttonElement = formElement.querySelector(submitButtonSelector);
-    const buttonElementText = formElement.querySelector(buttonTextClass);
     
     formElement.addEventListener('reset', ()=>{
         setTimeout(()=>{
-            disableButton(buttonElement, buttonElementText, inactiveButtonClass, inactiveButtonTextClass);
+            disableButton(buttonElement, inactiveButtonClass);
         }, 0)
         
     })
     inputList.forEach((inputElement) => {
         inputElement.addEventListener('input', () => {
-            toggleButtonState(inputList, buttonElement, buttonElementText, inactiveButtonClass, inactiveButtonTextClass);
+            toggleButtonState(inputList, buttonElement, inactiveButtonClass);
             isValid(formElement, inputElement, rest);
             
         });
-        toggleButtonState(inputList, buttonElement, buttonElementText, inactiveButtonClass, inactiveButtonTextClass);
+        toggleButtonState(inputList, buttonElement, inactiveButtonClass);
         
     });
    
@@ -78,14 +77,12 @@ const hasInvalidInput = (inputList) => {
 };
 
 
-export const enableButton = (buttonElement, buttonElementText, inactiveButtonClass, inactiveButtonTextClass) =>{
+export const enableButton = (buttonElement, inactiveButtonClass) =>{
     buttonElement.classList.remove(inactiveButtonClass);
-    buttonElementText.classList.remove(inactiveButtonTextClass);
     buttonElement.disabled = false;
 }
 
-export const disableButton = (buttonElement, buttonElementText, inactiveButtonClass, inactiveButtonTextClass)=>{
-    buttonElementText.classList.add(inactiveButtonTextClass);
+export const disableButton = (buttonElement, inactiveButtonClass)=>{
     buttonElement.classList.add(inactiveButtonClass);
     buttonElement.disabled = true;
 
@@ -94,14 +91,14 @@ export const disableButton = (buttonElement, buttonElementText, inactiveButtonCl
 
 
 
-const toggleButtonState = (inputList, buttonElement, buttonElementText, inactiveButtonClass, inactiveButtonTextClass) => {
+const toggleButtonState = (inputList, buttonElement, inactiveButtonClass) => {
     
     if (hasInvalidInput(inputList)) {
-        disableButton(buttonElement, buttonElementText, inactiveButtonClass, inactiveButtonTextClass)
+        disableButton(buttonElement, inactiveButtonClass)
 
     } else {
         // иначе сделай кнопку активной
-        enableButton(buttonElement, buttonElementText, inactiveButtonClass, inactiveButtonTextClass)
+        enableButton(buttonElement, inactiveButtonClass)
     }
 }
 
