@@ -169,13 +169,7 @@ export const closeByEscape = (evt) =>{
 
 
 
-profilePopup.addEventListener('mousedown', (e) => {
-  if (e.target.classList.contains("popup_opened")) {
 
-    closePopup(profilePopup);
-
-  }
-});
 
 
 
