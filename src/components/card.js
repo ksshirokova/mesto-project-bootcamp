@@ -1,8 +1,8 @@
 //РАБОТА С КАРТОЧКАМИ
-import { cardsContainer, cardTemplate, likesCounter , deliteCardPopup} from './constants.js';
-import { closePopup, handleImagePreview } from './modal.js';
-import { getInitialCards, deliteCard, putLike, deliteLike} from './api.js';
-import { renderCards } from '../index.js';
+import { cardsContainer, cardTemplate} from './constants.js';
+import { handleImagePreview } from './modal.js';
+import { deliteCard, putLike, deliteLike} from './api.js';
+import { usersId } from '../index.js';
 
 
 
@@ -28,7 +28,7 @@ export function createCard(item) {
     const likes = item.likes
     const ownerId = item.owner._id;
     const chechId=()=>{
-        if (ownerId!=="2561024ef781e917ceb01886"){
+        if (ownerId!==usersId){
             cardElement.removeChild(deleteButtonElement)
         }
     }
@@ -36,7 +36,7 @@ export function createCard(item) {
     
     const chechLikes = (likes)=>{
         likes.forEach((like=>{
-            if(like._id==="2561024ef781e917ceb01886"){
+            if(like._id===usersId){
                 heartButtonElement.classList.add('element__heart-button_on')
             }
 
@@ -94,19 +94,13 @@ export function createCard(item) {
         .catch((err) => {
             console.log(err)
         })
-        // .finally(()=>{
-        //     closePopup(deliteCardPopup)
-        // })
-        // openPopup(deliteCardPopup);
+        
         
         
         
     })
  
-    // confirmDeliteButton.addEventListener('click', function(){
-        
-    //     // closePopup(deliteCardPopup)
-    // })
+    
 
 
 
@@ -122,22 +116,11 @@ export function addNewCard(card) {
     cardsContainer.prepend(cardElement);
 }
 
-export const loadCards = () => {
-    
-    getInitialCards()
-        .then((cards) => {
-            
-            renderCards(cards);
+
 
             
             
             
 
-        })
-        
-        .catch((err) => {
-            console.log(err)
-        })
 
-}
 

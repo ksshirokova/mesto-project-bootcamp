@@ -1,8 +1,6 @@
 
-import {
-    renderCards, fillInUserData, fillUsersValue
-} from '../index.js'
-import { jobInput, nameInput } from './constants.js';
+
+
 
 
 const config = {
@@ -67,12 +65,7 @@ export const editProfileInformation = (usersName, usersAbout) => {
 
     })
         .then(getResponse)
-        // .then((result) => {
-        //     console.log(result)
-        //     jobInput.value = result.about;
-        //     nameInput.value = result.name;
-
-        // })
+        
         
 
 }
@@ -125,9 +118,7 @@ export const putLike = (cardId)=>{
         
     })
     .then(getResponse)
-    // .then((res)=>{
-    //     if(!res.ok) return Promise.reject(`Ошибка: ${res.status}`);
-    // })
+    
 }
 
 export const deliteLike = (cardId)=>{
@@ -137,9 +128,6 @@ export const deliteLike = (cardId)=>{
         
     })
     .then(getResponse)
-    // .then((res)=>{
-    //     if(!res.ok) return Promise.reject(`Ошибка: ${res.status}`);
-    // })
+    
 }
 
-//остановились на том, что сделали апи

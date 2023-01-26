@@ -24,9 +24,8 @@ export const initialCards = [
         link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
     }
 ];
-export const buttonOpenPopupCard = document.querySelector('.popup__save-button_card');
+export const popups = document.querySelectorAll('.popup')
 export const cardsContainer = document.querySelector('.elements__list');
-export const popupElement = document.querySelector('.popup');
 export const openedPopup = document.querySelector('.popup_opened')
 export const profilePopup = document.querySelector('.popup_name_add-name');
 export const deliteCardPopup = document.querySelector('.popup_delite-card')
@@ -37,18 +36,15 @@ export const buttonAddCard = document.querySelector('.profile__button');
 export const formElement = document.querySelector('.popup__form');
 export const formAddCard = document.querySelector('.popup__form_type_add-card');
 export const formAddName = document.querySelector('.popup__form_type_add-name');
-export const nameInput = document.querySelector('.popup__name');
 export const inputElement = document.querySelector('.popup__input');
 export const updateAvatarInput = document.querySelector('.popup__avatar_image-link');
 export const titleImage = document.querySelector('.popup__job_image-link');
 export const nameImage = document.querySelector('.popup__name_image-text');
-export const jobInput = document.querySelector('.popup__job');
 export const popupContainer = document.querySelector('.popup__container')
 export const nameOfUser = document.querySelector('.profile__title-info');
 export const jobOfUser = document.querySelector('.profile__subtitle-info');
 export const imagePopup = document.querySelector('.popup_card-image');
-export const formInput = document.querySelector('.popup__input');
-export const formError = formElement.querySelector(`.${formInput.id}-error`);
+export const formError = formElement.querySelector(`.${inputElement.id}-error`);
 export const formChangeAvatar = document.querySelector('.popup__form_type_update-profile')
 export const closeButtons = document.querySelectorAll('.popup__close-button');
 export const popupImage = document.querySelector('.popup__background-picture');
@@ -57,10 +53,7 @@ export const cardTemplate = document.querySelector('#element');
 export const profileAvatar = document.querySelector('.profile__avatar')
 export const popupInputName = document.querySelector('#input-name');
 export const popupInputAbout = document.querySelector('#input-job');
-export const profileEditAvatarButton = document.querySelector('.profile__edit-avatar') ;
-export const submitButton = document.querySelector('.popup__save-button');
-// export const confirmDeliteButton = document.querySelector('.popup__button-confirm');
-export const likesCounter = document.querySelector('.element__likes-counter');
+
 
 
 export const validationConfig = {
